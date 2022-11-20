@@ -139,9 +139,9 @@
             }
         }
 
-        public void MoveBlockDown()
+        public void MoveBlockDown(int Yaxis)
         {
-            CurrentBlock.Move(1, 0);
+            CurrentBlock.Move(Yaxis, 0);
 
             if (!BlockFits())
             {
