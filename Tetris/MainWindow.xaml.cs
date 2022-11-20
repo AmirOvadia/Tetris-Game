@@ -44,6 +44,7 @@ namespace Tetris
             new BitmapImage(new Uri("Assets/Block-Z.png", UriKind.Relative))
         };
 
+        private int Y_Axis = 1;
         private readonly Image[,] imageControls;
         private readonly int maxDelay = 1000;
         private readonly int minDelay = 75;
@@ -166,8 +167,10 @@ namespace Tetris
                 return;
             }
 
-            switch (e.Key)
+            if(Y_Axis == 1)
             {
+                switch (e.Key)
+                {
                 case Key.Left:
                     gameState.MoveBlockLeft();
                     break;
@@ -191,9 +194,25 @@ namespace Tetris
                     break;
                 default:
                     return;
+                }
             }
+            switch (e.Key)
+            {
+                 case Key.Pause:
+                        PauseManu.Visibility = Visibility.Visible;
+                        Y_Axis = 0;
+                    break;
+                case Key.Enter:
+                        PauseManu.Visibility = Visibility.Hidden;
+                        Y_Axis = 1;
+                    break;
+                default:
+                    return;
+            }
+        }
+            
 
-            Draw(gameState);
+        Draw(gameState);
         }
 
         private async void GameCanvas_Loaded(object sender, RoutedEventArgs e)
