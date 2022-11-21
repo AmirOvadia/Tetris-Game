@@ -67,7 +67,24 @@
                    Margin="20"
                    Width="125"/>
         </StackPanel>
-
+            
+            
+    <Grid x:Name="PauseManu"
+              Background="#CC000000"
+              Grid.RowSpan="8"
+              Grid.ColumnSpan="3"
+              Visibility="Hidden">
+            <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                <TextBlock Text="Pause"
+                   FontSize="48"
+                   TextAlignment="Center"/>
+                <TextBlock Text="Strike 'Enter' to return"
+                   FontSize="36"
+                   TextAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+            
         <Grid x:Name="GameOverMenu"
               Background="#CC000000"
               Grid.RowSpan="2"
